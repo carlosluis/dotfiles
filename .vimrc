@@ -12,8 +12,9 @@ nnoremap ; :
 " Quickly exit insert mode with jj
 inoremap jj <Esc>
 
-" Change mapleader from \ to ,
-let mapleader=","
+" Change mapleader from \ to space bar
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -22,10 +23,15 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 "This unsets the last search pattern register by hitting return
 nnoremap <CR> :noh<CR><CR>
 
+
 " Mapping for yanking to/from system clipboard
 noremap <leader>y "+y
 noremap <leader>p "+p
 nnoremap 3` <ESC>3i`<ESC>
+
+" Press F2 for pasting from clipboard preserving indent
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
 " ===================== SETTINGS ===========================================
 " Auto word wrap to 100 characters
 set wrap        
