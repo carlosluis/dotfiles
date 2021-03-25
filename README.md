@@ -55,7 +55,7 @@ dotfiles push
 ```
 
 ### Note
-if you want to add a new file to the dotfiles (and start tracking its changes), you simply can simply do
+if you want to add a new file to the dotfiles (and start tracking its changes), you can simply do
 ```
 dotfiles add <currently untracked file>
 ``` 
