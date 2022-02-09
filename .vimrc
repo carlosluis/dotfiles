@@ -5,6 +5,8 @@ set nocompatible
 " Quickly timeout keycodes but don't timeout mappings
 set notimeout ttimeout ttimeoutlen=100
 
+set clipboard=unnamed
+
 "===================== REMAPPINGS ===========================================
 " Save the use of shift: do commands like ;q! ;wq etc..
 nnoremap ; :
