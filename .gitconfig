@@ -1,0 +1,9 @@
+[user]
+	name = Carlos Luis
+	email = carlos.luisgonc@gmail.com
+
+[alias]
+	logg = !git --no-pager log -20 --oneline --decorate --all --graph
+
+[core]
+	editor = vim
