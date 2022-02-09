@@ -279,7 +279,12 @@ set -g history-limit 10000
 # start with mouse mode enabled
 set -g mouse on
 set-option -s set-clipboard off
-bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -se c -i"
+
+# USE THIS FOR MACOS
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "pbcopy"
+
+# UNCOMMENT THIS FOR LINUX
+# bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -se c -i"
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
