@@ -1,6 +1,9 @@
 # Changelog
 
 ### master
+- Proper handling of `automatic-rename` window option.
+
+### v3.0.0, 2021-08-30
 - save and restore tmux pane contents (@laomaiweng)
 - update tmux-test to solve issue with recursing git submodules in that project
 - set options quietly in `resurrect.tmux` script
@@ -26,6 +29,12 @@
 - always use `-ao` flags for `ps` command to detect commands
 - Deprecate restoring shell history feature.
 - `view` added to the list of automatically restored programs
+- Enable vim session strategy to work with custom session files,
+  e.g. `vim -S Session1.vim`.
+- Enable restoring command arguments for inline strategies with `*` character.
+- Kill session "0" if it wasn't restored.
+- Add `@resurrect-delete-backup-after` option to specify how many days of
+  backups to keep - default is 30.
 
 ### v2.4.0, 2015-02-23
 - add "tmux-test"

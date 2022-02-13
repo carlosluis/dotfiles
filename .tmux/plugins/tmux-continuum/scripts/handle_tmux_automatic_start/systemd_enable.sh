@@ -10,6 +10,8 @@ template() {
 	shift
 	local options="$@"
 	local content=""
+	local resurrect_save_script_path="$(get_tmux_option "$resurrect_save_path_option" "$(realpath ${CURRENT_DIR}/../../../tmux-resurrect/scripts/save.sh)")"
+	local tmux_path="$(command -v tmux)"
 
 	read -r -d '' content <<-EOF
 	[Unit]
@@ -19,10 +21,10 @@ template() {
 	[Service]
 	Type=forking
 	Environment=DISPLAY=:0
-	ExecStart=/usr/bin/tmux ${systemd_tmux_server_start_cmd}
+	ExecStart=${tmux_path} ${systemd_tmux_server_start_cmd}
 
-	ExecStop=${HOME}/.tmux/plugins/tmux-resurrect/scripts/save.sh
-	ExecStop=/usr/bin/tmux kill-server
+	ExecStop=${resurrect_save_script_path}
+	ExecStop=${tmux_path} kill-server
 	KillMode=none
 
 	RestartSec=2
@@ -35,7 +37,7 @@ template() {
 }
 
 systemd_tmux_is_enabled() {
-	systemctl --user is_enabled $(basename "${systemd_unit_file_path}") >/dev/null 2>&1
+	systemctl --user is-enabled $(basename "${systemd_unit_file_path}") >/dev/null 2>&1
 }
 
 enable_tmux_unit_on_boot() {
@@ -44,13 +46,27 @@ enable_tmux_unit_on_boot() {
 	fi
 }
 
-main() {
+systemd_unit_file() {
 	local options="$(get_tmux_option "$auto_start_config_option" "${auto_start_config_default}")"
 	local systemd_tmux_server_start_cmd="$(get_tmux_option "${systemd_tmux_server_start_cmd_option}" "${systemd_tmux_server_start_cmd_default}" )"
 	local tmux_start_script_path="${CURRENT_DIR}/linux_start_tmux.sh"
 	local systemd_unit_file=$(template "${tmux_start_script_path}" "${options}")
 	mkdir -p "$(dirname ${systemd_unit_file_path})"
-	echo "$systemd_unit_file" > "${systemd_unit_file_path}"
+	echo "$systemd_unit_file"
+}
+
+write_unit_file() {
+  systemd_unit_file > "${systemd_unit_file_path}"
+}
+
+write_unit_file_unless_exists() {
+	if ! [ -e "${systemd_unit_file_path}" ]; then
+    write_unit_file
+	fi
+}
+
+main() {
+  write_unit_file_unless_exists
 	enable_tmux_unit_on_boot
 }
 main
