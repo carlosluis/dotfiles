@@ -7,3 +7,11 @@
 
 [core]
 	editor = vim
+
+[credential "https://git.overleaf.com"]
+	username = carlos.luis306@gmail.com
+	helper=store
+
+[credential "https://github.boschdevcloud.com"]
+	username = luc1rng
+	helper=store
