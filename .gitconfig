@@ -6,7 +6,7 @@
 	logg = !git --no-pager log -20 --oneline --decorate --all --graph
 
 [core]
-	editor = vim
+	editor = nvim
 
 [credential "https://git.overleaf.com"]
 	username = carlos.luis306@gmail.com
