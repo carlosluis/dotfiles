@@ -864,6 +864,15 @@ require('lazy').setup({
     end,
   },
 
+  -- NOTE: This is to work with bare repo in dotfiles
+  {
+    'ejrichards/baredot.nvim',
+    opts = {
+      git_dir = '$HOME/dotfiles', -- Change this path
+      git_work_tree = '$HOME', -- Change this path
+    },
+  },
+
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
