@@ -108,7 +108,7 @@ tmux_conf_theme_pane_active_border="$tmux_conf_theme_colour_4"
 tmux_conf_theme_pane_indicator="$tmux_conf_theme_colour_4"
 tmux_conf_theme_pane_active_indicator="$tmux_conf_theme_colour_4"
 
-# status line style
+# atus line style
 tmux_conf_theme_message_fg="$tmux_conf_theme_colour_1"
 tmux_conf_theme_message_bg="$tmux_conf_theme_colour_5"
 tmux_conf_theme_message_attr="bold"
@@ -227,7 +227,7 @@ tmux_conf_theme_right_separator_sub="|"
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left=" ❐ #S "
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} | #{hostname} '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} %R , %d %b'
 
 # status left style
 tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_6,$tmux_conf_theme_colour_7,$tmux_conf_theme_colour_8"
@@ -283,7 +283,7 @@ tmux_conf_battery_bar_length="auto"
 # battery bar palette, possible values are:
 #   - gradient (default)
 #   - heat
-#   - "colour_full_fg,colour_empty_fg,colour_bg"
+#   - "colour_full_fg,colou_empty_fg,colour_bg"
 tmux_conf_battery_bar_palette="gradient"
 #tmux_conf_battery_bar_palette="#d70000,#e4e4e4,#000000"   # red, white, black
 
@@ -357,15 +357,13 @@ tmux-plugins/tmux-resurrect  \
 tmux-plugins/tmux-continuum  \
 '
 
-# Plu-in specific commands
+# Plug-in specific commands
 set -g @continuum-restore 'on'
 set -g @continuum-boot 'on'
 set -g @continuum-boot-options 'iterm,fullscreen'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
-
-
 
 # -- custom variables ----------------------------------------------------------
 
