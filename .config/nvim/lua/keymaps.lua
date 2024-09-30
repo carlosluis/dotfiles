@@ -23,6 +23,9 @@ vim.keymap.set('i', 'jj', '<Esc>')
 -- Remap ; to : for easier commands
 vim.keymap.set('n', ';', ':')
 
+-- Vertical split current pane
+vim.keymap.set('n', '<leader>v', '<cmd> :vsplit<CR>')
+
 -- Exit terminal mode with Esc
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 

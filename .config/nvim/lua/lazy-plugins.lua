@@ -1,31 +1,20 @@
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-
   require 'carlosluis/plugins/gitsigns',
-
   require 'carlosluis/plugins/which-key',
-
   require 'carlosluis/plugins/telescope',
-
   require 'carlosluis/plugins/lspconfig',
-
   require 'carlosluis/plugins/conform',
-
   require 'carlosluis/plugins/cmp',
-
   require 'carlosluis/plugins/colortheme',
-
   require 'carlosluis/plugins/todo-comments',
-
   require 'carlosluis/plugins/mini',
-
   require 'carlosluis/plugins/treesitter',
-
-  -- require 'kickstart.plugins.debug',
+  require 'carlosluis/plugins/debug',
+  require 'carlosluis/plugins/autopairs',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
-  require 'carlosluis.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
 }, {
   ui = {
