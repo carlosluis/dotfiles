@@ -36,15 +36,22 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+-- Do incremental searches and highlight
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 50
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
 vim.opt.timeoutlen = 300
+
+-- Better colors
+vim.opt.termguicolors = true
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true

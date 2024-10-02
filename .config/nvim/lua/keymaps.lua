@@ -20,6 +20,21 @@ vim.keymap.set('n', '<leader>sv', '<cmd> :so $MYVIMRC<CR>')
 -- Use jj to escape insert mode back to normal mode
 vim.keymap.set('i', 'jj', '<Esc>')
 
+-- Visual moving of highlighted section
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+-- Keep cursor in the middle when doing half jumps
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+-- Keep cursor in the middle when doing searches
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+
+-- Use leader p to paste while preserving the buffer
+vim.keymap.set('x', '<leader>p', '"_dP')
+
 -- Remap ; to : for easier commands
 vim.keymap.set('n', ';', ':')
 
