@@ -35,9 +35,6 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 -- Use leader p to paste while preserving the buffer
 vim.keymap.set('x', '<leader>p', '"_dP')
 
--- Remap ; to : for easier commands
-vim.keymap.set('n', ';', ':')
-
 -- Vertical split current pane
 vim.keymap.set('n', '<leader>v', '<cmd> :vsplit<CR>')
 

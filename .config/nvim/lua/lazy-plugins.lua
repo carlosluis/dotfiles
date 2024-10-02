@@ -14,6 +14,7 @@ require('lazy').setup({
   require 'carlosluis/plugins/debug',
   require 'carlosluis/plugins/autopairs',
   require 'carlosluis/plugins/baredot',
+  require 'carlosluis/plugins/harpoon',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.neo-tree',
