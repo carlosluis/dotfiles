@@ -4,14 +4,14 @@ return {
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'rose-pine/neovim',
-    name = 'neovim',
+    'folke/tokyonight.nvim',
+    name = 'tokyonight',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      require('rose-pine').setup {
+      require('tokyonight').setup {
         disable_background = true,
         styles = {
           bold = false,
@@ -19,7 +19,7 @@ return {
           transparency = true,
         },
       }
-      vim.cmd.colorscheme 'rose-pine'
+      vim.cmd.colorscheme 'tokyonight-night'
       vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
       vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 

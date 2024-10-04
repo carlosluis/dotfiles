@@ -169,8 +169,8 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        pyright = {},
         texlab = {},
+        jedi_language_server = {},
         ruff_lsp = {},
         -- rust_nalyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
