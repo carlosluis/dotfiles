@@ -14,6 +14,8 @@ return {
       require('tokyonight').setup {
         disable_background = true,
         styles = {
+          comments = { italic = false },
+          keywords = { italic = false },
           bold = false,
           italic = false,
           transparency = true,
