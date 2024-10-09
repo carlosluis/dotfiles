@@ -335,6 +335,7 @@ set-option -s set-clipboard on
 # USE THIS FOR MACOS
 bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "pbcopy"
 
+
 # UNCOMMENT THIS FOR LINUX
 # bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -se c -i"
 
@@ -361,6 +362,9 @@ tmux-plugins/tmux-continuum  \
 set -g @continuum-restore 'on'
 set -g @continuum-boot 'on'
 set -g @continuum-boot-options 'iterm,fullscreen'
+
+# Better way to jump between sessions
+bind S command-prompt -p "session abbr:" "run 'tmux switch -t $(tmux ls -F \"##{session_created}:##{session_name}\" | sort -n | grep \':%%\' | head -n 1 | cut -d \':\' -f 2)'"
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
