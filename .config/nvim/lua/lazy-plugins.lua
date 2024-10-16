@@ -1,6 +1,7 @@
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-fugitive',
   require 'carlosluis/plugins/gitsigns',
   require 'carlosluis/plugins/which-key',
   require 'carlosluis/plugins/telescope',
