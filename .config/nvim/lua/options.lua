@@ -7,9 +7,11 @@ vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 vim.opt.relativenumber = true
 
-vim.opt.colorcolumn = '88'
+vim.opt.colorcolumn = '120'
 
-vim.opt.textwidth = 88
+vim.opt.textwidth = 120
+
+vim.opt.tabstop = 4
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -19,6 +21,11 @@ vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim. Also works with Tmux and over SSH
 vim.o.clipboard = 'unnamedplus'
+
+--  See `:help 'clipboard'`
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
 
 local function paste()
   return {

@@ -92,6 +92,18 @@ return {
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
+    dap.configurations.python = {
+      {
+        type = 'python', -- the type here established the link to the adapter definition: `dap.adapters.python`
+        request = 'launch',
+        name = 'Launch File (justMyCode=false)',
+        program = '${file}',
+        pythonPath = '/home/dev/venv/bin/python',
+        console = 'integratedTerminal',
+        justMyCode = false, -- <--- insert here
+      },
+    }
+
     -- Install python specific config
     require('dap-python').setup 'python'
   end,
