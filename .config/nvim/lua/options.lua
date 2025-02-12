@@ -20,8 +20,7 @@ vim.opt.mouse = 'a'
 vim.opt.showmode = false
 
 -- Make cursor blink every half a second
-vim.opt.guicursor = 'n:block-blinkwait1000-blinkon500-blinkoff500'
-
+vim.opt.guicursor = 'n:block-blinkwait500-blinkon500-blinkoff500,i-ci:ver30-iCursor-blinkwait500-blinkon500-blinkoff500'
 -- Sync clipboard between OS and Neovim. Also works with Tmux and over SSH
 vim.o.clipboard = 'unnamedplus'
 
