@@ -7,9 +7,9 @@ vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 vim.opt.relativenumber = true
 
-vim.opt.colorcolumn = '120'
+vim.opt.colorcolumn = '88'
 
-vim.opt.textwidth = 120
+vim.opt.textwidth = 88
 
 vim.opt.tabstop = 4
 
@@ -18,6 +18,9 @@ vim.opt.mouse = 'a'
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
+
+-- Make cursor blink every half a second
+vim.opt.guicursor = 'n:block-blinkwait1000-blinkon500-blinkoff500'
 
 -- Sync clipboard between OS and Neovim. Also works with Tmux and over SSH
 vim.o.clipboard = 'unnamedplus'
