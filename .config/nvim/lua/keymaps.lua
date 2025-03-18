@@ -70,3 +70,20 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt.colorcolumn = '120'
   end,
 })
+
+-- Supress confirmation messages from vim fugitive
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'gitcommit',
+  callback = function()
+    vim.opt_local.cmdheight = 2
+  end,
+})
+
+vim.api.nvim_create_user_command('FixCmdHeight', function()
+  vim.o.cmdheight = 1
+end, {})
+vim.keymap.set('n', '<leader>fh', ':FixCmdHeight<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_create_user_command('Git', function(opts)
+  vim.cmd('silent! Git ' .. opts.args)
+end, { nargs = '*' })
