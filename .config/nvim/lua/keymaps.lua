@@ -38,8 +38,8 @@ vim.keymap.set('x', '<leader>p', '"_dP')
 -- Vertical split current pane
 vim.keymap.set('n', '<leader>v', '<cmd> :vsplit<CR>')
 
--- Exit terminal mode with Esc
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+-- Exit terminal mode with jj as we do in normal mode
+vim.keymap.set('t', 'jj', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows

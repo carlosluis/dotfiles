@@ -16,6 +16,7 @@ require('lazy').setup({
   require 'carlosluis/plugins/baredot',
   require 'carlosluis/plugins/harpoon',
   require 'carlosluis/plugins/fugitive',
+  require 'carlosluis/plugins/iron',
   -- require 'carlosluis/plugins/hardtime',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
