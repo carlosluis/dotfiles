@@ -173,6 +173,10 @@ if.app-id = 'com.apple.finder'
 run = ['layout floating']
 
 [[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+run = ['layout floating']
+
+[[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = ['move-node-to-workspace 1']
 
@@ -189,5 +193,9 @@ if.app-id = 'com.spotify.client'
 run = ['move-node-to-workspace 4']
 
 [[on-window-detected]]
-if.app-id = 'org.zotero.zotero'
+if.app-id = 'net.ankiweb.launcher'
 run = ['move-node-to-workspace 5']
+
+[[on-window-detected]]
+if.app-id = 'org.zotero.zotero'
+run = ['move-node-to-workspace 6']

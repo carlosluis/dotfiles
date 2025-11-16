@@ -332,6 +332,10 @@ set -g history-limit 10000
 set -g mouse on
 set-option -s set-clipboard on
 
+# Keep tmux using tmux-256color but add Ghostty cursor capabilities
+set -g default-terminal "tmux-256color"
+set -as terminal-overrides ',xterm-ghostty:Tc:Ss=\E[%p1%d q:Se=\E[2 q'
+
 # USE THIS FOR MACOS
 bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "pbcopy"
 
