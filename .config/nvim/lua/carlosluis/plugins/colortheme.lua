@@ -12,6 +12,8 @@ return {
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       require('rose-pine').setup {
+        variant = 'moon',
+        dark_variant = 'moon',
         disable_background = true,
         styles = {
           comments = { italic = false },
@@ -21,7 +23,7 @@ return {
           transparency = true,
         },
       }
-      vim.cmd.colorscheme 'rose-pine'
+      vim.cmd.colorscheme 'rose-pine-moon'
       vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
       vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' })
       vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })

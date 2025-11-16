@@ -20,6 +20,9 @@ vim.keymap.set('n', '<leader>sv', '<cmd> :so $MYVIMRC<CR>')
 -- Use jj to escape insert mode back to normal mode
 vim.keymap.set('i', 'jj', '<Esc>')
 
+-- Use leader w to save all
+vim.keymap.set('n', '<leader>w', '<cmd> :wa <CR>')
+
 -- Visual moving of highlighted section
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
