@@ -17,6 +17,7 @@ require('lazy').setup({
   require 'carlosluis/plugins/harpoon',
   require 'carlosluis/plugins/fugitive',
   require 'carlosluis/plugins/iron',
+  require 'carlosluis/plugins/oil',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
